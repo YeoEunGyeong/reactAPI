@@ -27,6 +27,8 @@
       const rootElement = document.querySelector("#root");
       const subject = " React";
       const 클래스이름 = "title";
+      // 태그 안에 {} 붙이면 어디서든 자바 스크립트 코드 사용 가능
+      // 태그에 데이터셋을 참조하는 주소 번지도 전달 가능 ; 자바와 동일
       const 사용자정의태그 = <h1 className={클래스이름}>{subject}</h1>;
       ReactDOM.createRoot(rootElement).render(사용자정의태그);
     </script>

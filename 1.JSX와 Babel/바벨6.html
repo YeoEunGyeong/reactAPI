@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>바벨 소개</title>
+    <title>바벨소개2</title>
   </head>
   <script
     crossorigin
@@ -16,21 +16,23 @@
   ></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <body>
-    <div id ="root"></div>
+    <div id="root"></div>
     <style>
-        .title{
-          background-color: aliceblue;
-            color: palevioletred;
-        }
+      .title {
+        background-color: aliceblue;
+        color: palevioletred;
+        font-size: 58px;
+      }
     </style>
     <script type="text/babel">
-        const rootElement = document.querySelector("#root");
-        const subject = "React"
-        const 클래스이름 = "title";
-        const props = {className: 클래스이름, children: subject};
-        const 사용자정의태그 = <h1 className={props.className} children={props.children} />;
-        ReactDOM.createRoot(rootElement).render(사용자정의태그);
-
+      const rootElement = document.querySelector("#root");
+      const subject = "React";
+      const 클래스이름 = "title";
+      const props = { className: 클래스이름, children: subject };
+      const 사용자정의태그 = (
+        <h1 className={props.className} children={props.children} />
+      );
+      ReactDOM.createRoot(rootElement).render(사용자정의태그);
     </script>
   </body>
 </html>

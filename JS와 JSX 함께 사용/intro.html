@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const rootElement = document.querySelector("#root");
+      function Paint({ title, description, children }) {
+        // function 함수로 변경
+        return (
+          <>
+            <h1>{title}</h1>
+            <h2>{description}</h2>
+            {/* children이 사용되는 것은 JSX라는 의미 */}
+            {children}
+          </>
+        );
+      }
+      // JSX
+      const element = (
+        <>
+          <Paint title="JS와 JSX 같이 쓰기" description="JSX!!!">
+            {Paint({
+              //
+              title: "리액트",
+              description: "가상 DOM 지원",
+              children: "부분 갱신 처리 가능",
+            })}
+          </Paint>
+        </>
+      );
+      ReactDOM.createRoot(rootElement).render(element);
+    </script>
+  </body>
+</html>

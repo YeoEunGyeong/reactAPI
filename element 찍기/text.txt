@@ -1,0 +1,15 @@
+Element 찍기
+Function ; 재사용이 가능한 element 생성
+함수이지만 element이다
+
+대문자로 적어야 함
+const Paint = ({props ; 여러가지 정보를 받아올 수 있음, 구조 분해 할당}) => {
+}
+const Paint = ({ title, description }) => {
+    retrun (
+        <>
+            <h1>{title}</h1>
+            <h2>{description}</h2>
+        </>
+    )
+}

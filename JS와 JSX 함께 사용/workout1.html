@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .items {
+            padding-left: 0; /* li 태그 내부 여백 0 */
+        }
+        .item {
+            list-style: none;
+            color: crimson;
+            font-size: 30px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const rootElement = document.querySelector("#root");
+      // 파라미터에 {} 있으면 props
+      const Workout = ({ props }) => {
+        const [items, setitems] = React.useState([
+          { id: 1, name: "유지민", count: 0 },
+          { id: 2, name: "김민정", count: 0 },
+          { id: 3, name: "지민정", count: 0 },
+        ]);
+        return (
+          <>
+          <ul className="itmes">
+              {
+                items.map(item => (
+                  <li key={item.id} className="item">{item.name}({item.count}짱)</li>
+                ))
+              }
+            </ul>
+          </>
+        );
+      };
+      const element = (
+        <>
+          <Workout />
+        </>
+      );
+      ReactDOM.createRoot(rootElement).render(element);
+    </script>
+  </body>
+</html>
